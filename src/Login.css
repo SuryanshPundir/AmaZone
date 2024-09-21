@@ -1,0 +1,83 @@
+.login {
+    height: 100vh;
+    background-color:rgb(209, 232, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      width: 30rem;
+    
+      overflow: hidden;
+      outline: 1px solid white;
+      
+      .left {
+        flex: 1;
+        background: rgb(51, 65, 85);
+        background-size: cover;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        color: white;
+  
+       
+        
+  
+        span {
+          font-size: 14px;
+        }
+        
+        button {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          background-color: white;
+          color: rgb(51, 65, 85);
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+  
+      .right {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        justify-content: center;
+  
+        h1 {
+        color: #555;
+        font-size: 38px;
+        }
+      
+        
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          
+          input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        outline: none;
+          }
+          
+          button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background-color: rgb(51, 65, 85);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  

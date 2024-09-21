@@ -3,8 +3,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
+
 export default function Header() {
-  const [{ basket }, dispatch] = useStateValue()
+  const [{ basket,user }, dispatch] = useStateValue()
+const handleAuthentication=()=>{
+  if(user){
+    auth.signOut();
+  }
+}
 
   return (
     <>
@@ -18,11 +25,16 @@ export default function Header() {
         </div>
         <div className="flex text-white justify-end items-center space-x-10 ml-10 mr-10">
 
-
-          <div className="cursor-pointer flex flex-col">
+<Link to={!user && "/login"}>
+          <div onClick={handleAuthentication} className="cursor-pointer flex flex-col">
             <span className='text-xs'>Hello User</span>
-            <span>Sign In</span>
+
+            <span>{user ? 'Sign Out' : 'Sign In'}</span>
+    
           </div>
+</Link>
+
+
 
           <div className="cursor-pointer flex flex-col">
             <span className='text-xs'>Returns</span>

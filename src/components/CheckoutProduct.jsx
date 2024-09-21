@@ -1,7 +1,14 @@
 import React from 'react';
-
+import { useStateValue } from '../StateProvider';
 function CheckoutProduct({ id, image, info, title, price, rating }) {
+const[{basket},dispatch]=useStateValue();
+    const removeFromBasket = () => {
+dispatch({
+    type: 'REMOVE_FROM_BASKET',
+    id: id
+})
 
+    }
 
 
 
@@ -11,7 +18,7 @@ function CheckoutProduct({ id, image, info, title, price, rating }) {
 
             <div className=''>
                 <p className=''>{title} <span className="ml-4 text-xs text-gray-700">{info}</span></p>
-                
+
                 <strong>${price}</strong>
 
                 <div className="font-bold  text-orange-600 flex ">
@@ -22,7 +29,7 @@ function CheckoutProduct({ id, image, info, title, price, rating }) {
                         ))}
                 </div>
 
-                <button className='text-xs hover:bg-orange-700 text-gray-50 bg-slate-800 py-2 rounded w-[100px]'>Remove</button>
+                <button onClick={removeFromBasket} className='text-xs hover:bg-orange-700 text-gray-50 bg-slate-800 py-2 rounded w-[100px]'>Remove</button>
 
             </div>
         </div>

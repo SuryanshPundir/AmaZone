@@ -11,7 +11,7 @@ export default function Checkout() {
                     <img className='mb-4' src="https://images-eu.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt="" />
                     <div className='min-w-[420px] p-6 bg-slate-100'>
                         <h1><b>Your Shopping Basket:</b></h1>
-                       
+
                         {basket.map(item => (
                             <CheckoutProduct
                                 id={item.id}
