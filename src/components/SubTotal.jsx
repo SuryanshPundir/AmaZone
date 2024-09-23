@@ -1,10 +1,15 @@
 import React from 'react'
 import CurrencyFormat from 'react-currency-format'
-import { useStateValue } from '../StateProvider'
+import { useStateValue} from '../StateProvider'
 import { getBasketTotal } from '../reducer'
+import { useNavigate } from 'react-router-dom'
 
 export default function SubTotal() {
+
+  const navigate = useNavigate()
   const [{ basket }, dispatch] = useStateValue()
+
+
   return (
     <div className='flex flex-col p-2 bg-slate-100 rounded h-[100px] mt-2 w-[300px] justify-between'>
       <CurrencyFormat renderText={(value) => (
@@ -24,7 +29,7 @@ export default function SubTotal() {
         prefix={"₹"}
       />
 
-      <button className='text-sm bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 rounded'>Proceed to Checkout</button>
+      <button onClick={() => navigate('/payment')} className='text-sm bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 rounded'>Proceed to Checkout</button>
 
     </div>
   )

@@ -27,7 +27,7 @@ const handleAuthentication=()=>{
 
 <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="cursor-pointer flex flex-col">
-            <span className='text-xs'>Hello User</span>
+            <span className='text-xs'>Hello {!user? 'Guest' : user.email}</span>
 
             <span>{user ? 'Sign Out' : 'Sign In'}</span>
     
